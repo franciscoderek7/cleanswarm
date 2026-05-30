@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Swarm — Elite Cleaning Services | Yachts, Jets, Estates</title>
+    <meta name="description" content="Luxury cleaning services for yachts, private jets, helicopters, estates, and high-rise buildings. Book elite cleaning from $399 CAD.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-soft: #f8f9fa;
+            --teal: #008080;
+            --teal-light: #20b2aa;
+            --gold: #d4af37;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --border: #e0e0e0;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--teal);
+            letter-spacing: 0.05em;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            padding: 10px 25px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--teal-light);
+            box-shadow: 0 5px 15px rgba(0, 128, 128, 0.2);
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--teal);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--teal);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 128, 128, 0.2);
+        }
+
+        .hero-cta:hover {
+            background: var(--teal-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 128, 128, 0.3);
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--teal), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+            background: white;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 100px 5%;
+            background: var(--bg-soft);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .price-tier {
+            font-size: 0.85rem;
+            color: var(--teal);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .price-name {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .price-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .price-list {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .price-list li {
+            padding: 10px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-list li::before {
+            content: '✓ ';
+            color: var(--teal);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .price-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .price-btn:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            padding: 60px 5%;
+            text-align: center;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+
+        .tech-stack h3 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .tech-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .tech-item {
+            padding: 8px 15px;
+            background: var(--bg-soft);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 5%;
+            border-top: 1px solid var(--border);
+            background: var(--bg-soft);
+            text-align: center;
+        }
+
+        .footer-branding {
+            color: var(--teal);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 20px; }
+            .hero h1 { font-size: 2rem; }
+            .section-header h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CLEAN <span>SWARM</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Elite Cleaning for <span>Luxury Assets</span></h1>
+        <p>From yachts to penthouse suites. Biometric-tracked teams. LangGraph-powered scheduling. 400 COGS at scale.</p>
+        <a href="#pricing" class="hero-cta">Book Elite Cleaning →</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive cleaning solutions for the world's most valuable assets.</p>
+        </div>
+
+        <div class="grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-water"></i></div>
+                <div class="service-name">Yachts & Marine</div>
+                <div class="service-desc">Superyacht detailing, hull cleaning, interior polishing, and marine-grade sanitization.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-plane"></i></div>
+                <div class="service-name">Private Jets & Aviation</div>
+                <div class="service-desc">Cabin deep-clean, cockpit sanitization, exterior polish, and aviation-grade detailing.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-helicopter"></i></div>
+                <div class="service-name">Helicopters</div>
+                <div class="service-desc">Rotor blade maintenance, cabin sterilization, and specialized aviation cleaning.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-truck"></i></div>
+                <div class="service-name">Commercial Trucks & Fleet</div>
+                <div class="service-desc">Fleet maintenance, cargo area sanitization, and commercial-grade detailing.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <div class="service-name">Residential Estates</div>
+                <div class="service-desc">Multi-property cleaning, grounds maintenance, and luxury home care.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <div class="service-name">High-Rise Buildings</div>
+                <div class="service-desc">Commercial space cleaning, window washing, and facility maintenance.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+                <div class="service-name">Specialty Vehicle Detailing</div>
+                <div class="service-desc">Motorcycles, exotic cars, and custom vehicle restoration and detailing.</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-champagne-glasses"></i></div>
+                <div class="service-name">Event & Venue Turnover</div>
+                <div class="service-desc">Post-event cleaning, venue preparation, and rapid turnover services.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>Transparent Pricing</h2>
+            <p>Flexible tiers for every scale of operation.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-tier">Entry</div>
+                <div class="price-name">Starter</div>
+                <div class="price-amount">$399</div>
+                <div class="price-sub">per job CAD</div>
+                <ul class="price-list">
+                    <li>Single property cleaning</li>
+                    <li>Standard team (2-3 people)</li>
+                    <li>4-hour service window</li>
+                    <li>Basic reporting</li>
+                </ul>
+                <button class="price-btn">Get Started</button>
+            </div>
+
+            <div class="price-card">
+                <div class="price-tier">Growth</div>
+                <div class="price-name">Professional</div>
+                <div class="price-amount">$999</div>
+                <div class="price-sub">per job CAD</div>
+                <ul class="price-list">
+                    <li>Multi-property or yacht</li>
+                    <li>Specialized team (4-6 people)</li>
+                    <li>8-hour service window</li>
+                    <li>Detailed reporting & photos</li>
+                </ul>
+                <button class="price-btn">Choose Plan</button>
+            </div>
+
+            <div class="price-card">
+                <div class="price-tier">Enterprise</div>
+                <div class="price-name">Scale</div>
+                <div class="price-amount">$2,499</div>
+                <div class="price-sub">per job CAD</div>
+                <ul class="price-list">
+                    <li>Jets, estates, or fleet</li>
+                    <li>Elite team (8+ specialists)</li>
+                    <li>Full-day service</li>
+                    <li>Real-time tracking & analytics</li>
+                </ul>
+                <button class="price-btn">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h3>Powered By</h3>
+        <div class="tech-items">
+            <div class="tech-item">LangGraph Self-Hosted</div>
+            <div class="tech-item">Hetzner Montreal</div>
+            <div class="tech-item">Truein Biometric</div>
+            <div class="tech-item">Optimized COGS</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-branding">CLEAN SWARM</div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Clean Swarm. Elite cleaning services for luxury assets.</p>
+            <p>A Francisco Holdings Inc. subsidiary.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
